@@ -1,0 +1,125 @@
+
+<script type="text/javascript">
+	var leftPos1 = 0;
+	var topPos1 = 0;
+	var xMove = 0.5;
+	var yMove = 0.5;
+
+	var leftPos2 = 500;
+	var topPos2 = 200;
+	var xMove2 = 1;
+	var yMove2 = 1;
+
+	var leftPos3 = 800;
+	var topPos3 = 50;
+	var xMove3 = 2;
+	var yMove3 = 2;
+
+		function move() {
+		// генерирование случ цвета
+			 function getRandomColor() {
+                return '#' + Math.floor(Math.random()*16777215).toString(16);
+            }
+            var newColor = getRandomColor();
+
+        // мяч 1
+			var bl1 = document.getElementById("ball1");
+            bl1.style.left = leftPos1 + "px";
+            bl1.style.top = topPos1 + "px";
+
+            leftPos1 = leftPos1 + xMove;
+            topPos1 = topPos1 + yMove;
+            if (leftPos1 == 920 || leftPos1 == 0) {
+            	xMove = -xMove;
+            	bl1.style.backgroundColor = newColor;
+
+            }
+             if (topPos1 == 320 || topPos1 == 0) {
+            	yMove = -yMove;
+            	bl1.style.backgroundColor = newColor;
+            }
+
+		// мяч 2
+			var bl2 = document.getElementById("ball2");
+            bl2.style.left = leftPos2 + "px";
+            bl2.style.top = topPos2 + "px";
+
+            leftPos2 = leftPos2 + xMove2;
+            topPos2 = topPos2 + yMove2;
+            if (leftPos2 == 940 || leftPos2 == 0) {
+            	xMove2 = -xMove2;
+            	bl2.style.backgroundColor = newColor;
+
+            }
+             if (topPos2 == 340 || topPos2 == 0) {
+            	yMove2 = -yMove2;
+            	bl2.style.backgroundColor = newColor;
+            }
+
+            // мяч 3
+			var bl3 = document.getElementById("ball3");
+            bl3.style.left = leftPos3 + "px";
+            bl3.style.top = topPos3 + "px";
+
+            leftPos3 = leftPos3 + xMove3;
+            topPos3 = topPos3 + yMove3;
+            if (leftPos3 == 900 || leftPos3 == 0) {
+            	xMove3 = -xMove3;
+            	bl3.style.backgroundColor = newColor;
+
+            }
+             if (topPos3 == 300 || topPos3 == 0) {
+            	yMove3 = -yMove3;
+            	bl3.style.backgroundColor = newColor;
+            }
+		}
+		setInterval (move, 5);
+
+</script>
+
+<body>
+	<div class="conteiner">
+		<div id="ball1"></div>
+		<div id="ball2"></div>
+		<div id="ball3"></div>
+	</div>
+<style type="text/css">
+	
+.conteiner {
+	width: 1000px;
+	height: 400px;
+	background-color: #CFCFCF;
+	position: absolute;
+	top: 50px;
+	left: 150px;
+	border: 2px solid black;
+}
+#ball1{
+	width: 80px;
+	height: 80px;
+	background-color: blue;
+	border-radius: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#ball2{
+	width: 60px;
+	height: 60px;
+	background-color: #7692BC;
+	border-radius: 50px;
+	position: absolute;
+	top: 200;
+	left: 100;
+}
+#ball3{
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	border-radius: 5px;
+	position: absolute;
+	top: 100;
+	left: 100;
+}
+</style>
+
